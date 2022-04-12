@@ -12,20 +12,18 @@ import {useHistory} from 'react-router-dom';
 
  export const Registra = () => {
     const [userRegistration, setUserRegistration] = useState({
-        nameofwebsite: "",
-        nameofcompany: "",
+        websiteurl: "",
         userid: "",
         password: "",
         emaiil: "",
-        servicerequired: "",
-        typeofservice:"",
+        traffic: "",
         admin:false,
         file: "",
         confirmpass: "",
         contactnum: ""
     });
     const History= useHistory();
-    let x = Math.floor((Math.random() * 10000) + 1);
+    let x = Math.floor((Math.random() * 1000) + 1);
     const [errors, setErrors] = useState({});
     let newError=(false);
     // const [dataIsCorrect, setDataIsCorrect] = useState(false);
@@ -33,7 +31,7 @@ import {useHistory} from 'react-router-dom';
         const name = e.target.name;
         const value = e.target.value;
         // console.log(name, value);
-        userRegistration.userid = "amps_client_" + userRegistration.nameofwebsite + x;
+        userRegistration.userid = "amps_client_" + userRegistration.websiteurl + x;
         setUserRegistration({ ...userRegistration, [name]: value });
     };
 
@@ -52,11 +50,10 @@ import {useHistory} from 'react-router-dom';
 
 
             const forRegistraion = {
-                websiteurl: userRegistration.nameofwebsite,
+                websiteurl: userRegistration.websiteurl,
                 userid: userRegistration.userid,
                 password: userRegistration.password,
                 emaiil: userRegistration.emaiil,
-                servicerequired: userRegistration.servicerequired,
                 traffic: userRegistration.traffic,
                 admin:userRegistration.admin,
                 confirmpass: userRegistration.confirmpass,
@@ -65,7 +62,7 @@ import {useHistory} from 'react-router-dom';
 
             }
             
-            // console.log(forRegistraion.nameofwebsite);
+            // console.log(forRegistraion.websiteurl);
          
             axios.post('http://localhost:3001/websiteregister', forRegistraion)
                 .then(function (response) {
@@ -97,8 +94,8 @@ import {useHistory} from 'react-router-dom';
                     <form className="newUserForm" onSubmit={SubmitForm} accept = 'files/*'action="/websiteregister" method="POST" encType="multipart/form-data">
                         <div className="newUserItem">
                             <label>Website URL</label>
-                            <input type="text" value={userRegistration.nameofwebsite} onChange={handleInput} name="websiteurl" className="input" />
-                            {errors.nameofwebsite && <p className="error">{errors.nameofwebsite}</p>}
+                            <input type="text" value={userRegistration.websiteurl} onChange={handleInput} name="websiteurl" className="input" />
+                            {errors.websiteurl && <p className="error">{errors.websiteurl}</p>}
 
                         </div>
                         <div className="newUserItem">
@@ -106,11 +103,6 @@ import {useHistory} from 'react-router-dom';
                             <input type="text" value={userRegistration.userid} onChange={handleInput} name="userid" className="input" autoComplete="off" />
                             {errors.userid && <p className="error">{errors.userid}</p>}
                         </div>
-                         {/* <div className="newUserItem">
-                            <label>Name of Company</label>
-                            <input type="text" value={userRegistration.nameofcompany} onChange={handleInput} name="nameofcompany" className="input" />
-                            {errors.nameofcompany && <p className="error">{errors.nameofcompany}</p>}
-                        </div> */}
 
                        
                         <div className="newUserItem">
@@ -129,12 +121,12 @@ import {useHistory} from 'react-router-dom';
                         <div className="newUserItem">
                             <label>Anticipated Traffic Flow</label>
                             <div className="custom_select">
-                                <select value={userRegistration.gender} onChange={handleInput} name="traffic">
+                                <select value={userRegistration.traffic} onChange={handleInput} name="traffic">
                                     <option value="">Select</option>
                                     <option value="Light">Light</option>
                                     <option value="Heavy">Heavy</option>
                                 </select>
-                                {errors.servicerequired && <p className="error">{errors.servicerequired}</p>}
+                                {errors.traffic && <p className="error">{errors.traffic}</p>}
                             </div>
                         </div>
 

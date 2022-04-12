@@ -4,11 +4,8 @@ export const validationmsg = (userRegistration) => {
     if(!userRegistration.firstname){
         errors.firstname="Full name is required";
     }
-    if(!userRegistration.nameofwebsite){
+    if(!userRegistration.websiteurl){
         errors.nameofwebsite="Name of website is required";
-    }
-    if(!userRegistration.nameofcompany){
-        errors.nameofcompany="Name of company is required";
     }
     if(!userRegistration.lastname){
         errors.lastname="Full Name is required";
@@ -29,14 +26,8 @@ export const validationmsg = (userRegistration) => {
     if(!userRegistration.gender){
         errors.gender="Choose a gender";
     }
-    if(!userRegistration.servicerequired){
-        errors.servicerequired="Choose a Service";
-    }
-    if(!userRegistration.device){
-        errors.device="Choose a device";
-    }
-    if(!userRegistration.typeofservice){
-        errors.typeofservice="Choose a type";
+    if(!userRegistration.traffic){
+        errors.traffic="Choose a type";
     }
     if(!userRegistration.emaiil){
         errors.emaiil="email is required";
@@ -50,6 +41,7 @@ export const validationmsg = (userRegistration) => {
     if(!userRegistration.file){
         errors.file="Please upload your file";
     }
+    console.log(errors);
     return (errors);        
 }
 

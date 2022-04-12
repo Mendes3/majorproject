@@ -26,7 +26,7 @@ const db = mysql.createConnection({
   host : 'localhost',
   user : 'root',
   password : '',
-  database : 'registered users',
+  database : 'registration',
 
 
 });
@@ -35,18 +35,18 @@ const db1 = mysql.createConnection({
   host : 'localhost',
   user : 'root',
   password : '',
-  database : 'registered websites',
+  database : 'client_web_registration',
 });
 
 //Routes start
 app.get('/register',function(req,res) {
-  db.query("SELECT * FROM users", (err, results) => {
+  db.query("SELECT * FROM registered_users", (err, results) => {
     if(err) throw err;
     res.send(results);
   });
 });
 app.get('/websiteregister',function(req,res) {
-  db.query("SELECT * FROM websites", (err, results) => {
+  db1.query("SELECT * FROM registered_client_websites", (err, results) => {
     if(err) 
     {
       console.log(err);
@@ -61,7 +61,7 @@ app.get('/login',function(req,res) {
  app.post('/Login',async (req,res)=>{
   var userid   = req.body.userid;
   var password = req.body.password;
-  db.query('SELECT * FROM users WHERE userid = ? AND password = ?',[userid, password], async function (error, results) {
+  db.query('SELECT * FROM registered_users WHERE userid = ? AND password = ?',[userid, password], async function (error, results) {
     if (error) {
       return res.send({
         "code"  : 400,
@@ -96,7 +96,7 @@ app.get('/login',function(req,res) {
     next();
   });
 app.post('/register', (req,res)=>{
-  var sql = 'INSERT INTO users SET ?';
+  var sql = 'INSERT INTO registered_users SET ?';
   const userDetails = req.body
 console.log(userDetails.emaiil) //for debugging purpose
   db.query(sql, userDetails,function (err, data) { 
@@ -113,18 +113,18 @@ console.log(userDetails.emaiil) //for debugging purpose
     })
     
     app.post('/websiteregister', (req,res)=>{
-      var sql = 'INSERT INTO websites SET ?';
+      var sql = 'INSERT INTO registered_client_websites SET ?';
       const websiteDetails = req.body
       // console.log(websiteDetails)
-      console.log(websiteDetails.file.filename) 
-      console.log(websiteDetails.file.file) 
+
+      console.log(websiteDetails.file) 
 
       // console.log(websiteDetails.nameofwebsite) 
 
       db1.query(sql,websiteDetails,function (err, data) { 
         if (err) {
               if(err.code == 11000) {
-                message={ status: 0, result: 'Website Name already used' }
+                message={ status: 0, result: 'Website URL already used' }
                       return res.send(message);
               }
                 message={ status: 0, result: err }

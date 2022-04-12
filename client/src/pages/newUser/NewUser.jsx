@@ -129,7 +129,7 @@ export default function NewUser() {
                                     <option value="">Select</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
-                                    <option value="female">Others</option>
+                                    <option value="others">Others</option>
                                 </select>
                                 {errors.gender && <p className="error">{errors.gender}</p>}
                             </div>
