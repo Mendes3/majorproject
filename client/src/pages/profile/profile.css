@@ -1,0 +1,165 @@
+.profile{
+    flex: 4;
+    padding: 20px;
+}
+
+.profileTitleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.profileAddButton{
+    width: 80px;
+    border: none;
+    padding: 5px;
+    background-color: teal;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+.profileContainer{
+    display: flex;
+    margin-top: 20px;
+}
+
+.profileShow{
+    flex: 1;
+    padding: 20px;
+    -webkit-box-shadow: 5px 5px 9px -1px #000000; 
+    box-shadow: 5px 5px 9px -1px #000000;
+}
+
+.profileUpdate{
+    flex: 2;
+    padding: 20px;
+    -webkit-box-shadow: 5px 5px 9px -1px #000000; 
+    box-shadow: 5px 5px 9px -1px #000000;
+    margin-left: 20px;
+}
+
+.profileShowTop{
+    display: flex;
+    align-items: center;
+}
+
+.profileShowImg{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.profileShowTopTitle{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.profileShowUsername{
+    font-weight: 600;
+}
+
+.profileShowDevice{
+    font-weight: 300;
+}
+.profileShowBottom{
+    margin-top: 20px;
+}
+
+.profileShowTitle{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(99, 95, 95);
+}
+
+.profileShowInfo{
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    color: #444;
+}
+
+.profileShowIcon{
+    font-size: 16px !important;
+}
+
+.profileShowInfoTitle{
+    margin-left: 10px;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.profileUpdateTitle{
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.profileUpdateForm{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.profileUpdateItem{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.profileUpdateGender{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row !important;
+}
+
+.profileUpdateItem>label{
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.profileUpdateInput{
+    border: none;
+    width: 250px;
+    height: 30px;
+    border-bottom: 1px solid gray ;
+
+}
+
+.profileUpdateRight{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.profileUpdateUpload{
+    display: flex;
+    align-items: center;
+
+}
+
+.profileUpdateImg{
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-top: -20px;
+}
+
+.profileUpdateIcon{
+    cursor: pointer;
+}
+
+.profileUpdateButton{
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: darkblue;
+    color: white;
+    font-weight: 600;
+}

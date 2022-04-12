@@ -1,0 +1,76 @@
+.user{
+    flex: 4;
+    padding: 20px;
+}
+
+.userTitleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+.userShow{
+    display: flex;
+    width: 80%;
+    /* justify-content:space-between; */
+    padding: 20px;
+    -webkit-box-shadow: 5px 5px 9px -1px #000000; 
+    box-shadow: 5px 5px 9px -1px #000000;
+}
+
+.userShowLeft{
+    margin-right: 40px;
+}
+
+.userSubHeading{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.userShowImg{
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+.userShowTitle{
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(99, 95, 95);
+}
+
+.userShowInfo{
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+    color: #444;
+}
+
+.userShowIcon{
+    font-size: 16px !important;
+}
+
+.userShowInfoTitle{
+    margin-left: 10px;
+    font-weight: 600;
+    color: black;
+}
+
+
+.userRemoveButton, .pointsDetail{
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgb(247, 94, 94);
+    color: white;
+    font-weight: 600;
+}
+
+.pointsDetail{
+    background-color: skyblue;
+    padding: 2px 5px;
+    margin-left: 20px;
+}

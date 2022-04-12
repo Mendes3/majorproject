@@ -1,0 +1,19 @@
+.userList{
+    flex: 4;
+}
+
+.userDetail{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #545a57;
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+
+.userListDelete{
+    color: red;
+    cursor: pointer;
+}
